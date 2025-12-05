@@ -49,7 +49,6 @@ export default function MovieDetails() {
   return (
     <div className="details-page">
 
-      {/* HERO / HEADER */}
       <div className="hero">
         <img
           className="hero-img"
@@ -72,7 +71,6 @@ export default function MovieDetails() {
         </div>
       </div>
 
-      {/* CAST SECTION */}
       <h2 className="section-title">Cast</h2>
       <div className="cast-row">
         {cast.slice(0, 12).map((c) => (
@@ -89,8 +87,6 @@ export default function MovieDetails() {
           </div>
         ))}
       </div>
-
-      {/* SIMILAR MOVIES */}
       <h2 className="section-title">Similar Movies</h2>
       <div className="similar-row">
         {similar.map((m) => (
