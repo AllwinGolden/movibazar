@@ -6,9 +6,6 @@ export default function Sidebar({ open, closeMenu }) {
     <aside className={`sidebar ${open ? "show" : ""}`}>
       <h2 className="logo">MOVIBAZAR</h2>
 
-      {/* <button className="close-btn" onClick={closeMenu} aria-label="Close menu">
-        ✕
-      </button> */}
 
       <nav>
         <Link to="/" onClick={closeMenu} className="active">Films</Link>

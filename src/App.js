@@ -77,9 +77,6 @@ export default function App() {
       <Sidebar open={menuOpen} closeMenu={() => setMenuOpen(false)} />
 
       <main className="content">
-        
-
-        {/* ⭐ MOBILE HAMBURGER MENU BUTTON (Animated) ⭐ */}
         <div className="mobile-header">
   <button
     className={`menu-btn ${menuOpen ? "open" : ""}`}
@@ -93,10 +90,6 @@ export default function App() {
 
   <h2 className="mobile-logo">MOVIBAZAR</h2>
 </div>
-
-       
-
-        {/* SEARCH + COLLECTION AREA */}
         <div className="top-bar">
           <div className="search-box">
             <input
