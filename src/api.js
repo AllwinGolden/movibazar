@@ -1,16 +1,31 @@
 const BASE = "https://api.themoviedb.org/3";
 
-export async function getCollectionParts(collectionId, apiKey) {
+// Get the API key from Netlify / .env
+const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+
+// If not found, show an alert (only in development)
+if (!apiKey) {
+  alert("Set REACT_APP_TMDB_API_KEY in Netlify Environment Variables");
+}
+
+// ────────────────────────────────────────────
+// COLLECTION PARTS
+// ────────────────────────────────────────────
+
+export async function getCollectionParts(collectionId) {
   if (!collectionId) return [];
   const url = `${BASE}/collection/${collectionId}?api_key=${apiKey}&language=en-US`;
   const res = await fetch(url);
   if (!res.ok) throw new Error("Collection fetch failed");
   const data = await res.json();
-  // TMDB collection has 'parts' array
   return data.parts || [];
 }
 
-export async function searchMovies(query, apiKey) {
+// ────────────────────────────────────────────
+// MOVIE SEARCH
+// ────────────────────────────────────────────
+
+export async function searchMovies(query) {
   if (!query) return [];
   const url = `${BASE}/search/movie?api_key=${apiKey}&language=en-US&query=${encodeURIComponent(query)}&page=1&include_adult=false`;
   const res = await fetch(url);
@@ -19,7 +34,11 @@ export async function searchMovies(query, apiKey) {
   return data.results || [];
 }
 
-export async function getMovieDetails(id, apiKey) {
+// ────────────────────────────────────────────
+// MOVIE DETAILS
+// ────────────────────────────────────────────
+
+export async function getMovieDetails(id) {
   const url = `${BASE}/movie/${id}?api_key=${apiKey}&language=en-US`;
   const res = await fetch(url);
   if (!res.ok) throw new Error("Movie details fetch failed");
