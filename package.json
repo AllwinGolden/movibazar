@@ -2,7 +2,6 @@
   "name": "movibazar",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://allwingolden.github.io/movibazar",
   "dependencies": {
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
