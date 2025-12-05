@@ -533,6 +533,7 @@ html, body {
   color: #0038ff;   
   margin-left: 50px;
   margin-top: 0;
+  padding-top: o;
 }
 @media (max-width: 900px) {
   .mobile-header {
